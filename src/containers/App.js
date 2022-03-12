@@ -17,6 +17,8 @@ function App() {
     //         searchfield: ''
     //     }
     // }
+    const [robots, setRobots] = useState([])
+    const [searchfield, setSearchfield] = useState('')
 
     // No such thing as componentDidMount inside of a function, so this is no longer needed (this came from the imported Component class in version one):
     // componentDidMount() {
@@ -27,12 +29,13 @@ function App() {
 
     // This becomes a variable in version two:
     const onSearchChange = (event) => {
-        this.setState({ searchfield: event.target.value })
+        setSearchfield(event.target.value)
     }
 
     // render no longer needed:
     // render() {
-    const { robots, searchfield } = this.state;
+    // next line no longer needed, because we no longer have a state object:
+    // const { robots, searchfield } = this.state;
     const filteredRobots = robots.filter(robot => {
         return robot.name.toLowerCase().includes(searchfield.toLowerCase())
     })
