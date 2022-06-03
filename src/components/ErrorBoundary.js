@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class ErrorBoundary extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            hasError: false
-        }
-    }
+function ErrorBoundary() {
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         hasError: false
+    //     }
+    // }
+
+    const [hasError, setHasError] = useState(false)
 
     render() {
         if (this.state.hasError) {
